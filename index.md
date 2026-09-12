@@ -8,7 +8,7 @@ Letterboxd Random Picker is an independent Chrome extension that picks a film fo
 from posters you tick on Letterboxd pages. It is not affiliated with, endorsed by, or connected
 to Letterboxd.
 
-**Effective date:** 2026-09-11
+**Effective date:** 2026-09-12
 
 This page describes everything the extension does with information while it runs in your
 browser — including the handling that happens entirely on your own device. None of it is sent
@@ -97,7 +97,8 @@ on purpose:
 
 - `permissions` is exactly `storage` — used only for the metadata cache and the one setting
   described above;
-- no host permissions (`host_permissions` is not declared);
+- no `host_permissions` entry; host access comes only from the content-script match on
+  letterboxd.com;
 - no background service worker;
 - a single narrow content-script match: `https://letterboxd.com/*` and
   `https://www.letterboxd.com/*`.
@@ -143,7 +144,7 @@ Letterboxd Random Picker, Letterboxd sayfalarında işaretlediğin posterler ara
 bir film seçen bağımsız bir Chrome eklentisidir. Letterboxd ile bir bağlantısı, ondan bir
 onayı yoktur.
 
-**Yürürlük tarihi:** 2026-09-11
+**Yürürlük tarihi:** 2026-09-12
 
 Bu sayfa, eklentinin tarayıcında çalışırken bilgilerle yaptığı her şeyi anlatır — tamamen
 kendi cihazında gerçekleşen işlemler dahil. Bunların hiçbiri geliştiriciye ya da herhangi bir
@@ -232,7 +233,8 @@ Eklenti mümkün olan en az şeyi ister; manifest'te olmayan her şey bilerek yo
 
 - `permissions` tam olarak `storage` — yalnızca yukarıda anlatılan metadata önbelleği ve tek
   ayar için kullanılır;
-- hiçbir host izni yoktur (`host_permissions` yok);
+- `host_permissions` girdisi yoktur; host erişimi yalnızca letterboxd.com content script
+  eşleşmesinden gelir;
 - arka plan service worker'ı yoktur;
 - tek ve dar bir content script eşleşmesi: `https://letterboxd.com/*` ve
   `https://www.letterboxd.com/*`.
