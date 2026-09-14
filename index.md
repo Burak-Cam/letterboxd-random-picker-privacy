@@ -2,13 +2,13 @@
 
 <a id="english"></a>
 
-# Privacy Policy — Letterboxd Random Picker
+# Privacy Policy — Cinespin
 
-Letterboxd Random Picker is an independent Chrome extension that picks a film for you
-from posters you tick on Letterboxd pages. It is not affiliated with, endorsed by, or connected
+Cinespin is an independent Chrome extension that picks a film for you from posters you
+tick on Letterboxd pages. It is not affiliated with, endorsed by, or connected
 to Letterboxd.
 
-**Effective date:** 2026-09-12
+**Effective date:** 2026-09-14
 
 This page describes everything the extension does with information while it runs in your
 browser — including the handling that happens entirely on your own device. None of it is sent
@@ -26,11 +26,15 @@ to the developer or to any third party.
 
 ## What the extension reads
 
-When you activate it on a Letterboxd page (from the toolbar popup, or automatically if you
-turned on *Always enable on Letterboxd*), the extension reads the poster grid that Letterboxd
+When you activate it on a Letterboxd page (from the toolbar popup or from the one-time setup
+tip, or automatically if you turned on *Always enable on Letterboxd*), the extension reads the poster grid that Letterboxd
 has already shown you: each film's Letterboxd identifier, its address on `letterboxd.com`,
 its title and its poster image address. Building your selection pool this way costs **zero**
 network requests — the checkboxes read the page and nothing else.
+
+Before you activate it, the only visible thing the extension does on a supported page is show a
+one-time setup tip at the bottom of the page. The tip reads nothing from the page and makes no
+requests.
 
 To tell which kind of Letterboxd page is open (a watchlist, a list, a filmography and so on),
 the extension looks at the page's address. On a member's pages that address includes the
@@ -69,8 +73,9 @@ storage inside your browser profile. Each film has its own entry, keyed by its L
 identifier, together with the time it was saved (used to refresh the rating after 30 days).
 This cache exists so the same film page is not requested twice. It is never sent anywhere.
 
-**One setting — `chrome.storage.local`.** Whether *Always enable on Letterboxd* is on (a single
-true/false value).
+**Two settings — `chrome.storage.local`.** (1) Whether *Always enable on Letterboxd* is on, and
+(2) whether the one-time setup tip has already been answered (you enabled the extension from it
+or chose *Don't show again*). Each is a single true/false value.
 
 **Your selection pool and filter values — the tab's session storage.** The films you tick
 (identifier, address, title, poster address) and the filter values you set are kept in the
@@ -95,7 +100,7 @@ Nothing else is stored.
 The extension asks for as little as possible, and anything absent from its manifest is absent
 on purpose:
 
-- `permissions` is exactly `storage` — used only for the metadata cache and the one setting
+- `permissions` is exactly `storage` — used only for the metadata cache and the two settings
   described above;
 - no `host_permissions` entry; host access comes only from the content-script match on
   letterboxd.com;
@@ -107,7 +112,7 @@ on purpose:
 
 - **Clear the cache:** open the extension's toolbar popup and click *Clear metadata cache*.
 - **Remove everything:** uninstalling the extension deletes its `chrome.storage.local` area —
-  the whole metadata cache and the setting.
+  the whole metadata cache and both settings.
 - **The pool:** close the Letterboxd tab. The pool is limited to the lifetime of the tab.
 
 ## Statistics the Chrome Web Store provides
@@ -131,20 +136,20 @@ Bug reports and support: <https://github.com/Burak-Cam/letterboxd-random-picker-
 
 ## Limited Use
 
-The use of information received by Letterboxd Random Picker complies with the Chrome Web Store
+The use of information received by Cinespin complies with the Chrome Web Store
 User Data Policy, including the Limited Use requirements.
 
 ---
 
 <a id="turkce"></a>
 
-# Gizlilik Politikası — Letterboxd Random Picker
+# Gizlilik Politikası — Cinespin
 
-Letterboxd Random Picker, Letterboxd sayfalarında işaretlediğin posterler arasından senin için
-bir film seçen bağımsız bir Chrome eklentisidir. Letterboxd ile bir bağlantısı, ondan bir
+Cinespin, Letterboxd sayfalarında işaretlediğin posterler arasından senin için bir film seçen
+bağımsız bir Chrome eklentisidir. Letterboxd ile bir bağlantısı, ondan bir
 onayı yoktur.
 
-**Yürürlük tarihi:** 2026-09-12
+**Yürürlük tarihi:** 2026-09-14
 
 Bu sayfa, eklentinin tarayıcında çalışırken bilgilerle yaptığı her şeyi anlatır — tamamen
 kendi cihazında gerçekleşen işlemler dahil. Bunların hiçbiri geliştiriciye ya da herhangi bir
@@ -163,10 +168,15 @@ kendi cihazında gerçekleşen işlemler dahil. Bunların hiçbiri geliştiriciy
 ## Eklenti neyi okur
 
 Bir Letterboxd sayfasında eklentiyi etkinleştirdiğinde (araç çubuğu açılır penceresinden ya da
-*Letterboxd'da her zaman etkin* seçeneğini açtıysan kendiliğinden), eklenti Letterboxd'un sana
+tek seferlik kurulum ipucundan, veya *Letterboxd'da her zaman etkin* seçeneğini açtıysan
+kendiliğinden), eklenti Letterboxd'un sana
 zaten gösterdiği poster ızgarasını okur: her filmin Letterboxd kimliği, `letterboxd.com`
 üzerindeki adresi, adı ve poster görselinin adresi. Havuzu bu şekilde kurmak **sıfır** ağ
 isteği maliyetlidir — onay kutuları yalnızca sayfayı okur.
+
+Etkinleştirmeden önce eklentinin desteklenen bir sayfada yaptığı tek görünür şey, sayfanın
+altında tek seferlik bir kurulum ipucu göstermektir. İpucu sayfadan hiçbir şey okumaz ve hiçbir
+istek atmaz.
 
 Hangi tür Letterboxd sayfasının açık olduğunu (watchlist, liste, filmografi vb.) anlamak için
 eklenti sayfanın adresine bakar. Bir üyenin sayfalarında bu adres o üyenin kullanıcı adını
@@ -206,8 +216,9 @@ kendine ait depolama alanına yazılır. Her filmin Letterboxd kimliğiyle anaht
 kaydı vardır; kayıtla birlikte kaydedildiği an da tutulur (puanı 30 gün sonra tazelemek için).
 Bu önbellek, aynı film sayfasının iki kez istenmemesi için vardır. Hiçbir yere gönderilmez.
 
-**Tek bir ayar — `chrome.storage.local`.** *Letterboxd'da her zaman etkin* seçeneğinin açık
-olup olmadığı (tek bir doğru/yanlış değeri).
+**İki ayar — `chrome.storage.local`.** (1) *Letterboxd'da her zaman etkin* seçeneğinin açık olup
+olmadığı ve (2) tek seferlik kurulum ipucunun yanıtlanıp yanıtlanmadığı (eklentiyi ondan
+etkinleştirdin ya da *Bir daha gösterme*'yi seçtin). Her biri tek bir doğru/yanlış değeridir.
 
 **Seçim havuzun ve filtre değerlerin — sekmenin oturum deposu.** İşaretlediğin filmler
 (kimlik, adres, ad, poster adresi) ve ayarladığın filtre değerleri o Letterboxd sekmesinin
@@ -231,7 +242,7 @@ Başka hiçbir şey saklanmaz.
 
 Eklenti mümkün olan en az şeyi ister; manifest'te olmayan her şey bilerek yoktur:
 
-- `permissions` tam olarak `storage` — yalnızca yukarıda anlatılan metadata önbelleği ve tek
+- `permissions` tam olarak `storage` — yalnızca yukarıda anlatılan metadata önbelleği ve iki
   ayar için kullanılır;
 - `host_permissions` girdisi yoktur; host erişimi yalnızca letterboxd.com content script
   eşleşmesinden gelir;
@@ -243,7 +254,7 @@ Eklenti mümkün olan en az şeyi ister; manifest'te olmayan her şey bilerek yo
 
 - **Önbelleği temizle:** eklentinin araç çubuğu penceresini aç ve *Önbelleği temizle*'ye bas.
 - **Her şeyi kaldır:** eklentiyi kaldırmak `chrome.storage.local` alanını siler — tüm
-  metadata önbelleğini ve ayarı.
+  metadata önbelleğini ve iki ayarı da.
 - **Havuz:** Letterboxd sekmesini kapat. Havuz sekmenin ömrüyle sınırlıdır.
 
 ## Chrome Web Store'un sağladığı istatistikler
@@ -266,5 +277,5 @@ Hata bildirimi ve destek: <https://github.com/Burak-Cam/letterboxd-random-picker
 
 ## Limited Use
 
-Letterboxd Random Picker'ın aldığı bilgileri kullanımı, Limited Use şartları dahil olmak üzere
+Cinespin tarafından alınan bilgilerin kullanımı, Limited Use şartları dahil olmak üzere
 Chrome Web Store Kullanıcı Verileri Politikası'na uygundur.
